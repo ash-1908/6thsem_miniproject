@@ -1,0 +1,4 @@
+consumerKey = "5ncq7oBTeVhEJdyFosd3bzLSA"
+consumerKeyPrivate = "Madxq8u27y5xRqe0d0QdhZQ1Dz38D0usUmCoOE2tYhUUZQqhek"
+accessKey = "854848982152957952-GMhMQqNFq3gqITiApTzPuONmHQLS2XC"
+accessKeyPrivate = "LlpKQexciV5AOqduoqO5iwukgFpj1GnvbMEMUkNWItKCu"
