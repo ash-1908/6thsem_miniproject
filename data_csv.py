@@ -27,4 +27,82 @@ api = tweepy.API(auth)
 # max_id – Returns only statuses with an ID less than (that is, older than) or equal to the specified ID.
 # include_entities – The entities node will not be included when set to false. Defaults to true.
 
-posts = api.search(q = "corona", lang = "en", count = 100, tweet_mode = "extended")
+posts = api.search(q = "corona", lang = "en", count = 2, tweet_mode = "extended")
+
+# store tweet part of tweets in a list
+tweets = []
+i = 0
+for tweet in posts[0: 2]:
+	tweets.insert(i, tweet.full_text)
+	i = i + 1
+# creating a dataframe
+import pandas as pd
+df = pd.DataFrame(tweets, columns = ['Tweets'])
+# store data in csv
+
+# DataFrame.to_csv(path_or_buf=None, sep=',', na_rep='', float_format=None, columns=None, header=True, index=True, index_label=None, mode='w', encoding=None, compression='infer', quoting=None, quotechar='"', line_terminator=None, chunksize=None, date_format=None, doublequote=True, escapechar=None, decimal='.', errors='strict', storage_options=None)
+# Parameters
+# path_or_bufstr or file handle, default None
+# File path or object, if None is provided the result is returned as a string. If a non-binary file object is passed, it should be opened with newline=’’, disabling universal newlines. If a binary file object is passed, mode might need to contain a ‘b’.
+
+# sepstr, default ‘,’
+# String of length 1. Field delimiter for the output file.
+
+# na_repstr, default ‘’
+# Missing data representation.
+
+# float_formatstr, default None
+# Format string for floating point numbers.
+
+# columnssequence, optional
+# Columns to write.
+
+# headerbool or list of str, default True
+# Write out the column names. If a list of strings is given it is assumed to be aliases for the column names.
+
+# indexbool, default True
+# Write row names (index).
+
+# index_labelstr or sequence, or False, default None
+# Column label for index column(s) if desired. If None is given, and header and index are True, then the index names are used. A sequence should be given if the object uses MultiIndex. If False do not print fields for index names. Use index_label=False for easier importing in R.
+
+# modestr
+# Python write mode, default ‘w’.
+
+# encodingstr, optional
+# A string representing the encoding to use in the output file, defaults to ‘utf-8’. encoding is not supported if path_or_buf is a non-binary file object.
+
+# compressionstr or dict, default ‘infer’
+# If str, represents compression mode. If dict, value at ‘method’ is the compression mode. Compression mode may be any of the following possible values: {‘infer’, ‘gzip’, ‘bz2’, ‘zip’, ‘xz’, None}. If compression mode is ‘infer’ and path_or_buf is path-like, then detect compression mode from the following extensions: ‘.gz’, ‘.bz2’, ‘.zip’ or ‘.xz’. (otherwise no compression). If dict given and mode is one of {‘zip’, ‘gzip’, ‘bz2’}, or inferred as one of the above, other entries passed as additional compression options.
+
+# quotingoptional constant from csv module
+# Defaults to csv.QUOTE_MINIMAL. If you have set a float_format then floats are converted to strings and thus csv.QUOTE_NONNUMERIC will treat them as non-numeric.
+
+# quotecharstr, default ‘"’
+# String of length 1. Character used to quote fields.
+
+# line_terminatorstr, optional
+# The newline character or character sequence to use in the output file. Defaults to os.linesep, which depends on the OS in which this method is called (‘n’ for linux, ‘rn’ for Windows, i.e.).
+
+# chunksizeint or None
+# Rows to write at a time.
+
+# date_formatstr, default None
+# Format string for datetime objects.
+
+# doublequotebool, default True
+# Control quoting of quotechar inside a field.
+
+# escapecharstr, default None
+# String of length 1. Character used to escape sep and quotechar when appropriate.
+
+# decimalstr, default ‘.’
+# Character recognized as decimal separator. E.g. use ‘,’ for European data.
+
+# errorsstr, default ‘strict’
+# Specifies how encoding and decoding errors are to be handled. See the errors argument for open() for a full list of options.
+
+# storage_optionsdict, optional
+# Extra options that make sense for a particular storage connection, e.g. host, port, username, password, etc., if using a URL that will be parsed by fsspec
+
+df.to_csv(path_or_buf = 'data.csv', sep = ',', columns = ['Tweets'], index = False, mode = 'w')
