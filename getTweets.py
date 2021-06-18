@@ -7,7 +7,7 @@ def main():
 
     # ------------------Input keyword to search for in tweets------------------------
 
-    query = input("Enter a keyword to search for: ")
+    query = input("\n\nEnter a keyword to search for: ")
 
     flag = 0
 
@@ -24,20 +24,20 @@ def main():
         else:
             flag = 1
         if(flag == 0):
-            query = input("Enter a keyword to search for: ")
+            query = input("\n\nEnter a keyword to search for: ")
 
-    type = input("What type of tweets to search for? (popular/top/mixed) ")
+    type = input("What type of tweets to search for? (popular/top/mixed): ")
     type = type.lower()
     while(type != "popular" and type != "top" and type != "mixed"):
         print("Wrong type entered!")
-        print("What type of tweets to search for? (popular/top/mixed)")
-        type = input("What type of tweets to search for? (popular/top/mixed) ")
+        type = input(
+            "What type of tweets to search for? (popular/top/mixed): ")
         type = type.lower()
 
-    count = int(input("Entered the number of tweets to fetch "))
+    count = int(input("Entered the number of tweets to fetch: "))
     while(count <= 0):
         print("Error: count should be greater than 0")
-        count = int(input("Entered the number of tweets to fetch"))
+        count = int(input("Entered the number of tweets to fetch: "))
 
     # ------------------------Retrieving Tweets--------------------
 

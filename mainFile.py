@@ -20,8 +20,8 @@ def sentiment(user_input):
         overall += score["compound"]
 
     print("\nUser input was: ", user_input)
-    print("\n\nPositivity: ", positivity, "Negativity: ", negativity,
-          "Neutrality: ", neutrality, "\nCompound Score: ", overall)
+    print("\n\nPositivity: ", positivity, ",Negativity: ", negativity,
+          ",Neutrality: ", neutrality, ",Compound Score: ", overall)
 
     overallSentiment = ""
 
@@ -40,13 +40,13 @@ def sentiment(user_input):
 
 
 # ------------Beginning of the program--------------------------
-print("Welcome to Twitter Sentiment Analysis Program\n\n")
+print("Welcome to Twitter Sentiment Analysis Program")
 
 user_choice = int(
-    input("1. Find Sentiment of User Input\n2. Compare TextBlob and VADER libraries\n3. Exit the program\n"))
+    input("\n\n1. Find Sentiment of User Input\n2. Compare TextBlob and VADER libraries\n3. Exit the program\n\n"))
 
 if(user_choice == 3):
-    input("Exiting program...")
+    input("\n\nExiting program...")
     exit()
 
 while(user_choice != 3):
@@ -63,11 +63,7 @@ while(user_choice != 3):
         exit()
 
     else:
-        choice = input("\n\nWrong choice entered!\nRe-enter choice? (Yes/No)")
-        choice = choice.lower()
-        if(choice == "no"):
-            input("\n\nExiting program...")
-            exit()
-        elif(choice == "yes"):
-            user_choice = int(
-                input("\n\nFind Sentiment of:\n1. User Input\n2. Tweets\n3. Exit the program\n"))
+        print("\n\nWrong choice entered!")
+
+    user_choice = int(
+        input("\n\nFind Sentiment of:\n1. User Input\n2. Tweets\n3. Exit the program\n\n"))
