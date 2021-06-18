@@ -30,7 +30,7 @@ while(type != "popular" and type != "top" and type != "mixed"):
     type = input("What type of tweets to search for? (popular/top/mixed) ")
     type = type.lower()
 
-count = int(input("Entered the number of tweets to fetch"))
+count = int(input("Entered the number of tweets to fetch "))
 while(count <= 0):
     print("Error: count should be greater than 0")
     count = int(input("Entered the number of tweets to fetch"))
