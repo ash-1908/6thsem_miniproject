@@ -178,7 +178,7 @@ def main():
     # None or str
     # If path_or_buf is None, returns the resulting csv format as a string. Otherwise returns None.
 
-    input("\nData stored in CSV file successfully!\n\nPress any key to continue")
+    input("\nData stored in CSV file successfully!\n\nPress any key to continue\n\n")
 
     # -----------calling Sentiment Analysis program---------------
     sentimentAnalysis.main()
