@@ -25,6 +25,7 @@ def main():
 
 # -------------Sentiment Analysis using VADER----------------
 
+
     def getScore(tweet):
         sentences = tokenize.sent_tokenize(tweet)
         total_score = 0.0
@@ -37,6 +38,7 @@ def main():
 
 
 # ----------------Function to label sentiment score--------------------------
+
 
     def labelSentiment(score):
         if(score >= 0.5):
@@ -55,6 +57,7 @@ def main():
 
 
 # --------------Sentiment Analysis using TextBlob------------------------------
+
 
     def getPol(tweet):
         sentences = tokenize.sent_tokenize(tweet)
@@ -88,9 +91,10 @@ def main():
 
 # --------------Printing our result-------------------------
 
-    print("***Comparing Sentiment calculated by VADER library and TextBlob library***\n\n")
+    print("\n\n***Comparing Sentiment calculated by VADER library and TextBlob library***\n\n")
 
-    if(diff_result.empty()):
+    check = diff_result.empty
+    if(check):
         print("\n\nThere are no conflicting results!!")
     else:
         print(diff_result)
@@ -105,4 +109,4 @@ def main():
             ans = input("Inspect a tweet manually? (Yes/No) ")
             ans = ans.lower()
 
-    input("\n\nThank You!\n\nPress any key to exit")
+    input("\n\nThank You!\n")
